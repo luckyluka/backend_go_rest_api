@@ -24,6 +24,8 @@
 
 **API USAGE**
 
+To interface with the API you may use curl commands, as is done in the examples below.
+You may also use provided json files, where there is a need for request body.
 
 
 _GET CERTIFICATES_
