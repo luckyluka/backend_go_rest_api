@@ -141,7 +141,7 @@ _request body (example)_
 
 <br/>
 
-##### ACCEPT CERTIFICATE TRANSFER
+#### ACCEPT CERTIFICATE TRANSFER
 <br/>
 
 >curl localhost:8080/users/{user_id}/certificates/{certificate_id}/transfers -X PATCH-d "@transfer.json" -H "OwnerId:{owner_id}"
