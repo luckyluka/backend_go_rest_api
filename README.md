@@ -39,6 +39,7 @@ You may also use provided json files, where there is a need for request body.
 <br/>
 
 _GET CERTIFICATES_
+
 <br/>
 
 >curl localhost:8080/users/{user_id}/certificates/ -X GET
