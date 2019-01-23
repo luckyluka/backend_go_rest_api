@@ -1,12 +1,13 @@
 # BACKEND GO REST API
 
-**INSTRUCTIONS - Starting API**<br/>
+**INSTRUCTIONS - Starting API**
 <br/>
 
-1. download the api:
+1. download the api
 
 >go get github.com/luckyluka/backend_go_rest_api
 <br/>
+
 2. create docker container
 
 >docker run golang go get -v github.com/luckyluka/backend_go_rest_api
@@ -16,21 +17,23 @@
 
 >docker ps -lq
 <br/>
+
 4. create an image (using id from previous step)
 
 >docker commit "container_id" backend_go_rest_api
 <br/>
+
 5. run api
 
 >docker run -p 8080:8080 backend_go_rest_api backend_go_rest_api
-
 <br/>
 <br/>
 **API USAGE**
 <br/>
-<br/>
+
 To interface with the API you may use curl commands, as is done in the examples below.
 You may also use provided json files, where there is a need for request body.
+
 <br/>
 
 _GET CERTIFICATES_
