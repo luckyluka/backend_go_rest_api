@@ -4,19 +4,19 @@
 
 1. download the api:
 
-'go get github.com/luckyluka/backend_go_rest_api'
+>go get github.com/luckyluka/backend_go_rest_api
 
 2. create docker container
-docker run golang go get -v github.com/luckyluka/backend_go_rest_api
+>docker run golang go get -v github.com/luckyluka/backend_go_rest_api
 
 3. get container id
-docker ps -lq
+>docker ps -lq
 
 4. create an image (using id from previous step)
-docker commit "container_id" backend_go_rest_api
+>docker commit "container_id" backend_go_rest_api
 
 5. run api
-docker run -p 8080:8080 backend_go_rest_api backend_go_rest_api
+>docker run -p 8080:8080 backend_go_rest_api backend_go_rest_api
 
 
 
