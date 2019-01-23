@@ -121,7 +121,7 @@ func CreateCertificateEndpoint(w http.ResponseWriter, req *http.Request) {
 	//}
 	//_ = json.NewDecoder(req.Body).Decode(&certificate)
 	certificates = append(certificates, certificate)
-	json.NewEncoder(w).Encode("Certificate successfully created")
+	json.NewEncoder(w).Encode(certificate)
 
 }
 
