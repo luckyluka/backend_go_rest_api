@@ -120,8 +120,7 @@ func CreateCertificateEndpoint(w http.ResponseWriter, req *http.Request) {
 	if err != nil {
 		return
 	}
-	
-	err = checkCertificateIdCreate(w, req)
+        err = checkCertificateIdCreate(w, req)
 	if err != nil {
 		return
 	}
