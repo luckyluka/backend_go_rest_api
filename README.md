@@ -18,7 +18,7 @@
 >docker ps -lq
 <br/>
 
-##### 5. CREATE AN DOCKER IMAGE (using id from previous step)
+##### 5. CREATE A DOCKER IMAGE (using id from previous step)
 
 >docker commit "container_id" backend_go_rest_api
 <br/>
