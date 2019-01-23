@@ -65,7 +65,7 @@ example:
 >curl localhost:8080/users/1/certificates/1 -X POST -d "@test.json" -H "OwnerId:1"
 <br/>
 
-_request body (example)
+_request body (example)_
 
 {
     
@@ -90,7 +90,7 @@ example:
 >curl localhost:8080/users/1/certificates/1 -X PATCH -d "@test.json" -H "OwnerId:1"
 <br/>
 
-_request body (example)
+_request body (example)_
 
 {
 
@@ -129,7 +129,7 @@ example:
 >curl localhost:8080/users/2/certificates/1/transfers -X POST -d "@transfer.json" -H "OwnerId:1"
 <br/>
 
-_request body (example)
+_request body (example)_
 
 {
 
@@ -150,7 +150,7 @@ _request body (example)
 
 <br/>
 
-_request body (example)
+_request body (example)_
 {
     
     "transfer":{
