@@ -67,6 +67,22 @@ func checkCertificateId(w http.ResponseWriter, req *http.Request) error {
 	return nil
 }
 
+func checkCertificateIdCreate(w http.ResponseWriter, req *http.Request) error {
+	params := mux.Vars(req)
+	idExists := 0
+	for i := range certificates {
+		if certificates[i].Id == params["cert_id"] {
+			idExists = 1
+		}
+	}
+	//fmt.Printf("idExists:%v\n", idExists)
+	if idExists != 0 {
+		json.NewEncoder(w).Encode("certificate_id already exists")
+		return errors.New("no such certificate")
+	}
+	return nil
+}
+
 func checkResponse(w http.ResponseWriter, req *http.Request, certificate Certificate) (Certificate, error) {
 	fmt.Printf("%v\n", req)
 	error := json.NewDecoder(req.Body).Decode(&certificate)
@@ -105,6 +121,10 @@ func CreateCertificateEndpoint(w http.ResponseWriter, req *http.Request) {
 		return
 	}
 	
+	err = checkCertificateIdCreate(w, req)
+	if err != nil {
+		return
+	}
 
 	params := mux.Vars(req)
 	var certificate Certificate
