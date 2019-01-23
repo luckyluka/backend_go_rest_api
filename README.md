@@ -56,8 +56,8 @@ You may also use provided json files, where there is a need for request body.
 >curl localhost:8080/users/1/certificates/ -X GET
 
 ### CREATE CERTIFICATE
-
 <br/>
+
 ##### API REQUEST
 
 ##### /users/{user_id}/certificates/{certificate_id}
@@ -77,40 +77,38 @@ You may also use provided json files, where there is a need for request body.
     "note":"green hills"
 
 }
->curl localhost:8080/users/{user_id}/certificates/{certificate_id} -X POST -d "@file.json" -H "OwnerId:{owner_id}"
 
-example:
 
+##### EXAMPLE
 >curl localhost:8080/users/1/certificates/1 -X POST -d "@test.json" -H "OwnerId:1"
-
-
 
 #### UPDATE CERTIFICATE
 <br/>
 
->curl localhost:8080/users/{user_id}/certificates/{certificate_id}/transfers -X PATCH -d "@file.json" -H "OwnerId:{owner_id}"
+##### API REQUEST
 
-example:
+##### /users/{user_id}/certificates/{certificate_id}/transfers
 
->curl localhost:8080/users/1/certificates/1 -X PATCH -d "@test.json" -H "OwnerId:1"
-<br/>
+##### REQUEST HEADER
+##### POST /users/1/certificates/1/transfers HTTP/1.1 / Host: localhost:12345 /OwnerId: {owner_id} / Content-Type: application/x-www-form-urlencoded
 
-_request body (example)_
-
+##### REQUEST BODY
 {
-
-    "title":"Vases",
     
-    "createdAt":"Rome",
+    "title":"novaPictura",
+    
+    "createdAt":"Mexico",
    
-    "year":"1984",
-    
-    "note":"scenery"
+    "year":"1992",
+   
+    "note":"green hills"
 
 }
 
 
-
+##### EXAMPLE
+>curl localhost:8080/users/1/certificates/1 -X PATCH -d "@test.json" -H "OwnerId:1"
+<br/>
 
 #### DELETE CERTIFICATE
 <br/>
