@@ -53,7 +53,7 @@ You may also use provided json files, where there is a need for request body.
 
 
 ##### EXAMPLE
->curl localhost:8080/users/1/certificates/ -X GET
+>curl localhost:8080/users/1/certificates -X GET
 <br/>
 
 ### CREATE CERTIFICATE
