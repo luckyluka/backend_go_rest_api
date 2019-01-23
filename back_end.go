@@ -160,7 +160,7 @@ func UpdateCertificateEndpoint(w http.ResponseWriter, req *http.Request) {
 
 		}
 	}
-	json.NewEncoder(w).Encode("Certificate successfully updated")
+	json.NewEncoder(w).Encode(certificate)
 }
 
 func DeleteCertificateEndpoint(w http.ResponseWriter, req *http.Request) {
@@ -178,11 +178,11 @@ func DeleteCertificateEndpoint(w http.ResponseWriter, req *http.Request) {
 	fmt.Printf("params:%v\n", params)
 	for i := range certificates {
 		if certificates[i].OwnerId == req.Header.Get("OwnerId") && certificates[i].Id == params["cert_id"] {
+			json.NewEncoder(w).Encode(certificates[i])
 			certificates = append(certificates[:i], certificates[i+1:]...)
 			break
 		}
 	}
-	json.NewEncoder(w).Encode("Certificate successfully deleted")
 }
 
 func TransferCertificateEndpoint(w http.ResponseWriter, req *http.Request) {
@@ -230,7 +230,7 @@ func TransferCertificateEndpoint(w http.ResponseWriter, req *http.Request) {
 		certificates = append(certificates, certificate)
 		sort.Slice(certificates, func(i, j int) bool { return certificates[i].Id < certificates[j].Id })
 	}
-	json.NewEncoder(w).Encode("Certificate transfer created")
+	json.NewEncoder(w).Encode(certificate)
 }
 
 func AcceptCertificateEndpoint(w http.ResponseWriter, req *http.Request) {
@@ -281,28 +281,28 @@ func AcceptCertificateEndpoint(w http.ResponseWriter, req *http.Request) {
 			fmt.Printf("cert_ownid:%v\n", certificate.OwnerId)
 			fmt.Printf("params[user_id]:%v\n", params["user_id"])
 			fmt.Printf("certificate.Transfer.To:%v\n", certificate.Transfer.To)
+			certificate.Title = certificates[i].Title
+			certificate.CreatedAt = certificates[i].CreatedAt
+			certificate.Year = certificates[i].Year
+			certificate.Note = certificates[i].Note
+			certificate.OwnerId = params["user_id"]
 
-			if params["user_id"] != certificate.Transfer.To && params["user_id"] != req.Header.Get("OwnerId") {
-				certificate.Title = certificates[i].Title
-				certificate.CreatedAt = certificates[i].CreatedAt
-				certificate.Year = certificates[i].Year
-				certificate.Note = certificates[i].Note
-				certificate.OwnerId = params["user_id"]
-				certificates = append(certificates, certificate)
+			if params["user_id"] != certificate.Transfer.To {
 				sort.Slice(certificates, func(i, j int) bool { return certificates[i].Id < certificates[j].Id })
+				certificates = append(certificates, certificate)
 			}
 			break
 		}
 	}
 	// DELETE DUPLICATE
 	for i := range certificates {
-		if certificates[i].OwnerId != req.Header.Get("OwnerId") && certificates[i].Id == params["cert_id"] && params["user_id"] != req.Header.Get("OwnerId") {
+		if certificates[i].OwnerId != req.Header.Get("OwnerId") && certificates[i].Id == params["cert_id"] {
 			fmt.Printf("%v\n", certificates[i])
 			certificates = append(certificates[:i], certificates[i+1:]...)
 			break
 		}
 	}
-	json.NewEncoder(w).Encode("Certificate transfer accepted")
+	json.NewEncoder(w).Encode(certificate)
 }
 
 func homePage(w http.ResponseWriter, r *http.Request) {
