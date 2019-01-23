@@ -55,6 +55,7 @@ You may also use provided json files, where there is a need for request body.
 ##### EXAMPLE
 >curl localhost:8080/users/1/certificates/ -X GET
 <br/>
+
 ### CREATE CERTIFICATE
 <br/>
 
@@ -63,9 +64,22 @@ You may also use provided json files, where there is a need for request body.
 ##### /users/{user_id}/certificates/{certificate_id}
 
 ##### REQUEST HEADER
-##### POST /users/1/certificates/1/transfers HTTP/1.1 / Host: localhost:12345 /OwnerId: {owner_id} / Content-Type: application/x-www-form-urlencoded
+##### POST /users/1/certificates/1/ HTTP/1.1 / Host: localhost:12345 /OwnerId: {owner_id} / Content-Type: application/x-www-form-urlencoded
 
 ##### REQUEST BODY
+{
+    
+    "title":"novaPictura",
+    
+    "createdAt":"Mexico",
+   
+    "year":"1992",
+   
+    "note":"green hills"
+
+}
+
+##### RESPONSE BODY
 {
     
     "title":"novaPictura",
@@ -82,7 +96,8 @@ You may also use provided json files, where there is a need for request body.
 ##### EXAMPLE
 >curl localhost:8080/users/1/certificates/1 -X POST -d "@test.json" -H "OwnerId:1"
 <br/>
-#### UPDATE CERTIFICATE
+
+### UPDATE CERTIFICATE
 <br/>
 
 ##### API REQUEST
@@ -106,10 +121,25 @@ You may also use provided json files, where there is a need for request body.
 }
 
 
+##### RESPONSE BODY
+{
+    
+    "title":"novaPictura",
+    
+    "createdAt":"Mexico",
+   
+    "year":"1992",
+   
+    "note":"green hills"
+
+}
+
+
 ##### EXAMPLE
 >curl localhost:8080/users/1/certificates/1 -X PATCH -d "@test.json" -H "OwnerId:1"
 <br/>
-#### DELETE CERTIFICATE
+
+### DELETE CERTIFICATE
 <br/>
 
 ##### API REQUEST
@@ -123,7 +153,7 @@ You may also use provided json files, where there is a need for request body.
 >curl localhost:8080/users/1/certificates/1 -X DELETE -H "OwnerId:1"
 <br/>
 
-#### CREATE CERTIFICATE TRANSFER
+### CREATE CERTIFICATE TRANSFER
 <br/>
 
 ##### API REQUEST
@@ -143,11 +173,25 @@ You may also use provided json files, where there is a need for request body.
 
 }
 
+##### RESPONSE BODY
+{
+    
+    "title":"novaPictura",
+    
+    "createdAt":"Mexico",
+   
+    "year":"1992",
+   
+    "note":"green hills"
+
+}
+
+
 ##### EXAMPLE
 >curl localhost:8080/users/2/certificates/1/transfers -X POST -d "@transfer.json" -H "OwnerId:1"
 <br/>
 
-#### ACCEPT CERTIFICATE TRANSFER
+### ACCEPT CERTIFICATE TRANSFER
 <br/>
 
 ##### API REQUEST
@@ -164,6 +208,19 @@ You may also use provided json files, where there is a need for request body.
     "transfer":{
     
     "status":"completed"}
+}
+
+##### RESPONSE BODY
+{
+    
+    "title":"novaPictura",
+    
+    "createdAt":"Mexico",
+   
+    "year":"1992",
+   
+    "note":"green hills"
+
 }
 
 ##### EXAMPLE
