@@ -38,19 +38,21 @@ You may also use provided json files, where there is a need for request body.
 
 <br/>
 
-#### GET CERTIFICATES
-
+### GET CERTIFICATES
 <br/>
 
->curl localhost:8080/users/{user_id}/certificates/ -X GET
+#### API REQUEST
 
-<br/>
+#### /users/{user_id}/certificates/
 
-example response
+
+#### RESPONSE BODY
 
 >{"id":"1","title":"SunScape","createdAt":"Florence","ownerId":"1","year":"1982",Note: "River"}
 >{"id":"2","title":"EveningGrass","createdAt":"Milan","ownerId":"1","year":"1972",Note: "Moon"}
 
+#### EXAMPLE
+>curl localhost:8080/users/1/certificates/ -X GET
 
 <br/>
 
