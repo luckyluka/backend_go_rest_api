@@ -24,16 +24,20 @@
 
 **API USAGE**
 
-GET CERTIFICATES
-curl localhost:12345/users/{user_id}/certificates/ -X GET
+
+
+_GET CERTIFICATES_
+
+>curl localhost:12345/users/{user_id}/certificates/ -X GET
 
 example response
+
 {"id":"1","title":"SunScape","createdAt":"Florence","ownerId":"1","year":"1982","transfer":{}}
 {"id":"2","title":"EveningGrass","createdAt":"Milan","ownerId":"1","year":"1972","transfer":{}}
 
 
 
-CREATE CERTIFICATE
+_CREATE CERTIFICATE_
 
 request body (json format)
 
@@ -45,13 +49,13 @@ request body (json format)
 }
 
 
-curl localhost:12345/users/{user_id}/certificates/{certificate_id} -X POST -d "@file.json" -H "OwnerId:{owner_id}"
+>curl localhost:12345/users/{user_id}/certificates/{certificate_id} -X POST -d "@file.json" -H "OwnerId:{owner_id}"
 
 example:
-curl localhost:12345/users/1/certificates/1 -X POST -d "@test.json" -H "OwnerId:1"
+>curl localhost:12345/users/1/certificates/1 -X POST -d "@test.json" -H "OwnerId:1"
 
 
-UPDATE CERTIFICATE
+_UPDATE CERTIFICATE_
 
 request body (json format)
 
@@ -63,16 +67,22 @@ request body (json format)
 }
 
 
-curl localhost:12345/users/{user_id}/certificates/{certificate_id}/transfers -X PATCH -d "@file.json" -H "OwnerId:{owner_id}"
+>curl localhost:12345/users/{user_id}/certificates/{certificate_id}/transfers -X PATCH -d "@file.json" -H "OwnerId:{owner_id}"
 
 example:
-curl localhost:12345/users/1/certificates/1 -X PATCH -d "@test.json" -H "OwnerId:1"
 
-DELETE CERTIFICATE
-curl localhost:12345/users/{user_id}/certificates/{certificate_id} -X DELETE -H "OwnerId:{owner_id}"
-curl localhost:12345/users/1/certificates/1 -X DELETE -H "OwnerId:1"
+>curl localhost:12345/users/1/certificates/1 -X PATCH -d "@test.json" -H "OwnerId:1"
 
-CREATE CERTIFICATE TRANSFER
+
+_DELETE CERTIFICATE_
+
+
+>curl localhost:12345/users/{user_id}/certificates/{certificate_id} -X DELETE -H "OwnerId:{owner_id}"
+
+>curl localhost:12345/users/1/certificates/1 -X DELETE -H "OwnerId:1"
+
+
+_CREATE CERTIFICATE TRANSFER_
 
 request body (json)
 {
@@ -81,9 +91,11 @@ request body (json)
 }
 
 curl localhost:12345/users/{user_id}/certificates/{certificate_id}/transfers -X POST -d "@transfer.json" -H "OwnerId:{owner_id}"
+
 curl localhost:12345/users/2/certificates/1/transfers -X POST -d "@transfer.json" -H "OwnerId:1"
 
-ACCEPT CERTIFICATE TRANSFER
+
+_ACCEPT CERTIFICATE TRANSFER_
 
 request body (json)
 {
@@ -92,6 +104,7 @@ request body (json)
 }
 
 curl localhost:12345/users/{user_id}/certificates/{certificate_id}/transfers -X PATCH-d "@transfer.json" -H "OwnerId:{owner_id}"
+
 curl localhost:12345/users/2/certificates/1/transfers -X PATCH-d "@transfer.json" -H "OwnerId:1"
 
 
