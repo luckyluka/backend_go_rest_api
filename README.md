@@ -41,34 +41,31 @@ You may also use provided json files, where there is a need for request body.
 ### GET CERTIFICATES
 <br/>
 
-#### API REQUEST
+##### API REQUEST
 
-#### /users/{user_id}/certificates/
+##### /users/{user_id}/certificates/
 
 
-#### RESPONSE BODY
+##### RESPONSE BODY
 
 >{"id":"1","title":"SunScape","createdAt":"Florence","ownerId":"1","year":"1982",Note: "River"}
 >{"id":"2","title":"EveningGrass","createdAt":"Milan","ownerId":"1","year":"1972",Note: "Moon"}
 
-#### EXAMPLE
+
+##### EXAMPLE
 >curl localhost:8080/users/1/certificates/ -X GET
 
-<br/>
-
-#### CREATE CERTIFICATE
+### CREATE CERTIFICATE
 
 <br/>
+##### API REQUEST
 
->curl localhost:8080/users/{user_id}/certificates/{certificate_id} -X POST -d "@file.json" -H "OwnerId:{owner_id}"
+##### /users/{user_id}/certificates/{certificate_id}
 
-example:
+##### REQUEST HEADER
+##### POST /users/1/certificates/1/transfers HTTP/1.1 / Host: localhost:12345 /OwnerId: {owner_id} / Content-Type: application/x-www-form-urlencoded
 
->curl localhost:8080/users/1/certificates/1 -X POST -d "@test.json" -H "OwnerId:1"
-<br/>
-
-_request body (example)_
-
+##### REQUEST BODY
 {
     
     "title":"novaPictura",
@@ -80,6 +77,12 @@ _request body (example)_
     "note":"green hills"
 
 }
+>curl localhost:8080/users/{user_id}/certificates/{certificate_id} -X POST -d "@file.json" -H "OwnerId:{owner_id}"
+
+example:
+
+>curl localhost:8080/users/1/certificates/1 -X POST -d "@test.json" -H "OwnerId:1"
+
 
 
 #### UPDATE CERTIFICATE
