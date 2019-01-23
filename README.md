@@ -48,8 +48,8 @@ _GET CERTIFICATES_
 
 example response
 
->{"id":"1","title":"SunScape","createdAt":"Florence","ownerId":"1","year":"1982","transfer":{}}
->{"id":"2","title":"EveningGrass","createdAt":"Milan","ownerId":"1","year":"1972","transfer":{}}
+>{"id":"1","title":"SunScape","createdAt":"Florence","ownerId":"1","year":"1982",Note: "River"}
+>{"id":"2","title":"EveningGrass","createdAt":"Milan","ownerId":"1","year":"1972",Note: "Moon"}
 
 
 <br/>
