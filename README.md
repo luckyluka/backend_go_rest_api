@@ -1,13 +1,12 @@
 # BACKEND GO REST API
 
-
-
-**INSTRUCTIONS - Starting API**
+**INSTRUCTIONS - Starting API**<br/>
+<br/>
 
 1. download the api:
 
 >go get github.com/luckyluka/backend_go_rest_api
-
+<br/>
 2. create docker container
 >docker run golang go get -v github.com/luckyluka/backend_go_rest_api
 
