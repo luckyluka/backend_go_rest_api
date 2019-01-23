@@ -43,7 +43,7 @@ You may also use provided json files, where there is a need for request body.
 
 ##### API REQUEST
 
-##### /users/{user_id}/certificates/
+###### /users/{user_id}/certificates/
 
 
 ##### RESPONSE BODY
@@ -61,10 +61,10 @@ You may also use provided json files, where there is a need for request body.
 
 ##### API REQUEST
 
-##### /users/{user_id}/certificates/{certificate_id}
+###### /users/{user_id}/certificates/{certificate_id}
 
 ##### REQUEST HEADER
-##### POST /users/1/certificates/1/ HTTP/1.1 / Host: localhost:12345 /OwnerId: {owner_id} / Content-Type: application/x-www-form-urlencoded
+###### POST /users/1/certificates/1/ HTTP/1.1 / Host: localhost:12345 /OwnerId: {owner_id} / Content-Type: application/x-www-form-urlencoded
 
 ##### REQUEST BODY
 {
@@ -102,10 +102,10 @@ You may also use provided json files, where there is a need for request body.
 
 ##### API REQUEST
 
-##### /users/{user_id}/certificates/{certificate_id}/transfers
+###### /users/{user_id}/certificates/{certificate_id}/transfers
 
 ##### REQUEST HEADER
-##### POST /users/1/certificates/1/transfers HTTP/1.1 / Host: localhost:12345 /OwnerId: {owner_id} / Content-Type: application/x-www-form-urlencoded
+###### POST /users/1/certificates/1/transfers HTTP/1.1 / Host: localhost:12345 /OwnerId: {owner_id} / Content-Type: application/x-www-form-urlencoded
 
 ##### REQUEST BODY
 {
@@ -144,10 +144,10 @@ You may also use provided json files, where there is a need for request body.
 
 ##### API REQUEST
 
-##### curl localhost:8080/users/{user_id}/certificates/{certificate_id}
+###### /users/{user_id}/certificates/{certificate_id}
 
 ##### REQUEST HEADER
-##### POST /users/{user_id}/certificates/{certificate_id}/ HTTP/1.1 / Host: localhost:12345 /OwnerId: {owner_id} / Content-Type: application/x-www-form-urlencoded
+###### POST /users/{user_id}/certificates/{certificate_id}/ HTTP/1.1 / Host: localhost:12345 /OwnerId: {owner_id} / Content-Type: application/x-www-form-urlencoded
 
 ##### EXAMPLE
 >curl localhost:8080/users/1/certificates/1 -X DELETE -H "OwnerId:1"
@@ -158,10 +158,10 @@ You may also use provided json files, where there is a need for request body.
 
 ##### API REQUEST
 
-##### /users/{user_id}/certificates/{certificate_id}/transfers
+###### /users/{user_id}/certificates/{certificate_id}/transfers
 
 ##### REQUEST HEADER
-##### POST /users/{user_id}/certificates/{certificate_id}/transfers HTTP/1.1 / Host: localhost:12345 /OwnerId: {owner_id} / Content-Type: application/x-www-form-urlencoded
+###### POST /users/{user_id}/certificates/{certificate_id}/transfers HTTP/1.1 / Host: localhost:12345 /OwnerId: {owner_id} / Content-Type: application/x-www-form-urlencoded
 
 ##### REQUEST BODY
 
@@ -196,10 +196,10 @@ You may also use provided json files, where there is a need for request body.
 
 ##### API REQUEST
 
-##### /users/{user_id}/certificates/{certificate_id}/transfers
+###### /users/{user_id}/certificates/{certificate_id}/transfers
 
 ##### REQUEST HEADER
-##### POST /users/{user_id}/certificates/{certificate_id}/transfers HTTP/1.1 / Host: localhost:12345 /OwnerId: {owner_id} / Content-Type: application/x-www-form-urlencoded
+###### POST /users/{user_id}/certificates/{certificate_id}/transfers HTTP/1.1 / Host: localhost:12345 /OwnerId: {owner_id} / Content-Type: application/x-www-form-urlencoded
 
 
 ##### REQUEST BODY
