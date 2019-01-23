@@ -32,8 +32,8 @@ _GET CERTIFICATES_
 
 example response
 
-{"id":"1","title":"SunScape","createdAt":"Florence","ownerId":"1","year":"1982","transfer":{}}
-{"id":"2","title":"EveningGrass","createdAt":"Milan","ownerId":"1","year":"1972","transfer":{}}
+>{"id":"1","title":"SunScape","createdAt":"Florence","ownerId":"1","year":"1982","transfer":{}}
+>{"id":"2","title":"EveningGrass","createdAt":"Milan","ownerId":"1","year":"1972","transfer":{}}
 
 
 
@@ -59,12 +59,12 @@ _UPDATE CERTIFICATE_
 
 request body (json format)
 
-{
-    "title":"Vases",
-    "createdAt":"Rome",
-    "year":"1984",
-    "note":"scenery"
-}
+>{
+>   "title":"Vases",
+>    "createdAt":"Rome",
+>    "year":"1984",
+>    "note":"scenery"
+>}
 
 
 >curl localhost:12345/users/{user_id}/certificates/{certificate_id}/transfers -X PATCH -d "@file.json" -H "OwnerId:{owner_id}"
