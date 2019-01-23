@@ -183,12 +183,16 @@ You may also use provided json files, where there is a need for request body.
     "year":"1992",
    
     "note":"green hills"
+   
+    "transfer":{
+    
+    "to":"{owner_id}"}
 
 }
 
 
 ##### EXAMPLE
->curl localhost:8080/users/2/certificates/1/transfers -X POST -d "@transfer.json" -H "OwnerId:1"
+>curl localhost:8080/users/1/certificates/1/transfers -X POST -d "@transfer.json" -H "OwnerId:1"
 <br/>
 
 ### ACCEPT CERTIFICATE TRANSFER
@@ -224,4 +228,4 @@ You may also use provided json files, where there is a need for request body.
 }
 
 ##### EXAMPLE
->curl localhost:8080/users/2/certificates/1/transfers -X PATCH-d "@transfer.json" -H "OwnerId:1"
+>curl localhost:8080/users/2/certificates/1/transfers -X PATCH-d "@transfer.json" -H "OwnerId:2"
