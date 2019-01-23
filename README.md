@@ -1,5 +1,7 @@
 # BACKEND GO REST API
 
+
+
 **INSTRUCTIONS - Starting API**
 
 1. download the api:
@@ -20,7 +22,7 @@
 
 
 
-API USAGE
+**API USAGE**
 
 GET CERTIFICATES
 curl localhost:12345/users/{user_id}/certificates/ -X GET
