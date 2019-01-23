@@ -3,27 +3,27 @@
 ## INSTRUCTIONS - Starting API
 <br/>
 
-1. download the api
+##### 1. DOWNLOAD THE API
 
 >go get github.com/luckyluka/backend_go_rest_api
 <br/>
 
-2. create docker container
+##### 2. CREATE DOCKER CONTAINER
 
 >docker run golang go get -v github.com/luckyluka/backend_go_rest_api
 <br/>
 
-3. get container id
+##### 3. GET CONTAINER ID
 
 >docker ps -lq
 <br/>
 
-4. create an image (using id from previous step)
+##### 5. CREATE AN DOCKER IMAGE (using id from previous step)
 
 >docker commit "container_id" backend_go_rest_api
 <br/>
 
-5. run api
+##### 6. RUN API
 
 >docker run -p 8080:8080 backend_go_rest_api backend_go_rest_api
 <br/>
@@ -141,7 +141,7 @@ request body (example)
 
 <br/>
 
-###### ACCEPT CERTIFICATE TRANSFER
+##### ACCEPT CERTIFICATE TRANSFER
 <br/>
 
 >curl localhost:8080/users/{user_id}/certificates/{certificate_id}/transfers -X PATCH-d "@transfer.json" -H "OwnerId:{owner_id}"
@@ -152,7 +152,9 @@ request body (example)
 
 request body (example)
 {
+    
     "transfer":{
+    
     "status":"completed"}
 }
 
