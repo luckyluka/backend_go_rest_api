@@ -296,7 +296,7 @@ func AcceptCertificateEndpoint(w http.ResponseWriter, req *http.Request) {
 	}
 	// DELETE DUPLICATE
 	for i := range certificates {
-		if certificates[i].OwnerId != req.Header.Get("OwnerId") && certificates[i].Id == params["cert_id"] {
+		if certificates[i].OwnerId != req.Header.Get("OwnerId") {
 			fmt.Printf("%v\n", certificates[i])
 			certificates = append(certificates[:i], certificates[i+1:]...)
 			break
