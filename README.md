@@ -236,7 +236,7 @@ You may also use provided json files, where there is a need for request body.
 ## UNIT TESTING
 <br/>
 
-There are basic unit test provided in the backend_test.go
+There are basic unit tests provided in the backend_test.go
 
 
 #### RUN TESTS
