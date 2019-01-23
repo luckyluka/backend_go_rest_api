@@ -1,6 +1,6 @@
 # BACKEND GO REST API
 
-INSTRUCTIONS - Starting API
+**INSTRUCTIONS - Starting API**
 
 1. download the api:
 go get github.com/luckyluka/backend_go_rest_api
