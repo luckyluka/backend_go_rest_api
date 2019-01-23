@@ -1,6 +1,6 @@
 # BACKEND GO REST API
 
-**INSTRUCTIONS - Starting API**
+## INSTRUCTIONS - Starting API
 <br/>
 
 1. download the api
@@ -29,7 +29,7 @@
 <br/>
 
 
-**API USAGE**
+## API USAGE
 
 <br/>
 
@@ -38,7 +38,7 @@ You may also use provided json files, where there is a need for request body.
 
 <br/>
 
-_GET CERTIFICATES_
+###### GET CERTIFICATES
 
 <br/>
 
@@ -54,7 +54,7 @@ example response
 
 <br/>
 
-_CREATE CERTIFICATE_
+###### CREATE CERTIFICATE_
 
 <br/>
 
@@ -80,7 +80,7 @@ request body (example)
 }
 
 
-_UPDATE CERTIFICATE_
+###### UPDATE CERTIFICATE
 <br/>
 
 >curl localhost:8080/users/{user_id}/certificates/{certificate_id}/transfers -X PATCH -d "@file.json" -H "OwnerId:{owner_id}"
@@ -107,7 +107,7 @@ request body (example)
 
 
 
-_DELETE CERTIFICATE_
+###### DELETE CERTIFICATE
 <br/>
 
 
@@ -117,7 +117,7 @@ _DELETE CERTIFICATE_
 <br/>
 
 
-_CREATE CERTIFICATE TRANSFER_
+###### CREATE CERTIFICATE TRANSFER
 
 <br/>
 
@@ -141,7 +141,7 @@ request body (example)
 
 <br/>
 
-_ACCEPT CERTIFICATE TRANSFER_
+###### ACCEPT CERTIFICATE TRANSFER
 <br/>
 
 >curl localhost:8080/users/{user_id}/certificates/{certificate_id}/transfers -X PATCH-d "@transfer.json" -H "OwnerId:{owner_id}"
