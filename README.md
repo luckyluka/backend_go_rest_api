@@ -94,7 +94,7 @@ You may also use provided json files, where there is a need for request body.
 
 
 ##### EXAMPLE
->curl localhost:8080/users/1/certificates/1 -X POST -d "@test.json" -H "OwnerId:1"
+>curl localhost:8080/users/1/certificates/3 -X POST -d "@test.json" -H "OwnerId:1"
 <br/>
 
 ### UPDATE CERTIFICATE
