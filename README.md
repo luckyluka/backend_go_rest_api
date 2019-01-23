@@ -28,7 +28,7 @@
 
 _GET CERTIFICATES_
 
->curl localhost:12345/users/{user_id}/certificates/ -X GET
+>curl localhost:8080/users/{user_id}/certificates/ -X GET
 
 example response
 
@@ -42,57 +42,72 @@ _CREATE CERTIFICATE_
 request body (json format)
 
 {
+    
     "title":"novaPictura",
+    
     "createdAt":"Mexico",
+   
     "year":"1992",
+   
     "note":"green hills"
+
 }
 
 
->curl localhost:12345/users/{user_id}/certificates/{certificate_id} -X POST -d "@file.json" -H "OwnerId:{owner_id}"
+>curl localhost:8080/users/{user_id}/certificates/{certificate_id} -X POST -d "@file.json" -H "OwnerId:{owner_id}"
 
 example:
->curl localhost:12345/users/1/certificates/1 -X POST -d "@test.json" -H "OwnerId:1"
+
+>curl localhost:8080/users/1/certificates/1 -X POST -d "@test.json" -H "OwnerId:1"
 
 
 _UPDATE CERTIFICATE_
 
-request body (json format)
+request body (example)
 
->{
->   "title":"Vases",
->    "createdAt":"Rome",
->    "year":"1984",
->    "note":"scenery"
->}
+{
+
+    "title":"Vases",
+    
+    "createdAt":"Rome",
+   
+    "year":"1984",
+    
+    "note":"scenery"
+
+}
 
 
->curl localhost:12345/users/{user_id}/certificates/{certificate_id}/transfers -X PATCH -d "@file.json" -H "OwnerId:{owner_id}"
+>curl localhost:8080/users/{user_id}/certificates/{certificate_id}/transfers -X PATCH -d "@file.json" -H "OwnerId:{owner_id}"
 
 example:
 
->curl localhost:12345/users/1/certificates/1 -X PATCH -d "@test.json" -H "OwnerId:1"
+>curl localhost:8080/users/1/certificates/1 -X PATCH -d "@test.json" -H "OwnerId:1"
 
 
 _DELETE CERTIFICATE_
 
 
->curl localhost:12345/users/{user_id}/certificates/{certificate_id} -X DELETE -H "OwnerId:{owner_id}"
+>curl localhost:8080/users/{user_id}/certificates/{certificate_id} -X DELETE -H "OwnerId:{owner_id}"
 
->curl localhost:12345/users/1/certificates/1 -X DELETE -H "OwnerId:1"
+>curl localhost:8080/users/1/certificates/1 -X DELETE -H "OwnerId:1"
 
 
 _CREATE CERTIFICATE TRANSFER_
 
-request body (json)
+request body (example)
+
 {
+
     "transfer":{
+    
     "to":"{owner_id}"}
+
 }
 
-curl localhost:12345/users/{user_id}/certificates/{certificate_id}/transfers -X POST -d "@transfer.json" -H "OwnerId:{owner_id}"
+>curl localhost:8080/users/{user_id}/certificates/{certificate_id}/transfers -X POST -d "@transfer.json" -H "OwnerId:{owner_id}"
 
-curl localhost:12345/users/2/certificates/1/transfers -X POST -d "@transfer.json" -H "OwnerId:1"
+>curl localhost:8080/users/2/certificates/1/transfers -X POST -d "@transfer.json" -H "OwnerId:1"
 
 
 _ACCEPT CERTIFICATE TRANSFER_
@@ -103,9 +118,9 @@ request body (json)
     "status":"completed"}
 }
 
-curl localhost:12345/users/{user_id}/certificates/{certificate_id}/transfers -X PATCH-d "@transfer.json" -H "OwnerId:{owner_id}"
+>curl localhost:8080/users/{user_id}/certificates/{certificate_id}/transfers -X PATCH-d "@transfer.json" -H "OwnerId:{owner_id}"
 
-curl localhost:12345/users/2/certificates/1/transfers -X PATCH-d "@transfer.json" -H "OwnerId:1"
+>curl localhost:8080/users/2/certificates/1/transfers -X PATCH-d "@transfer.json" -H "OwnerId:1"
 
 
 
