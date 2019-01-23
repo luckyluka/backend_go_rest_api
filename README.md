@@ -18,12 +18,12 @@
 >docker ps -lq
 <br/>
 
-##### 5. CREATE A DOCKER IMAGE (using id from previous step)
+##### 4. CREATE A DOCKER IMAGE (using id from previous step)
 
 >docker commit "container_id" backend_go_rest_api
 <br/>
 
-##### 6. RUN API
+##### 5. RUN API
 
 >docker run -p 8080:8080 backend_go_rest_api backend_go_rest_api
 <br/>
@@ -54,7 +54,7 @@ You may also use provided json files, where there is a need for request body.
 
 ##### EXAMPLE
 >curl localhost:8080/users/1/certificates/ -X GET
-
+<br/>
 ### CREATE CERTIFICATE
 <br/>
 
@@ -81,7 +81,7 @@ You may also use provided json files, where there is a need for request body.
 
 ##### EXAMPLE
 >curl localhost:8080/users/1/certificates/1 -X POST -d "@test.json" -H "OwnerId:1"
-
+<br/>
 #### UPDATE CERTIFICATE
 <br/>
 
@@ -109,30 +109,31 @@ You may also use provided json files, where there is a need for request body.
 ##### EXAMPLE
 >curl localhost:8080/users/1/certificates/1 -X PATCH -d "@test.json" -H "OwnerId:1"
 <br/>
-
 #### DELETE CERTIFICATE
 <br/>
 
+##### API REQUEST
 
->curl localhost:8080/users/{user_id}/certificates/{certificate_id} -X DELETE -H "OwnerId:{owner_id}"
+##### curl localhost:8080/users/{user_id}/certificates/{certificate_id}
 
+##### REQUEST HEADER
+##### POST /users/{user_id}/certificates/{certificate_id}/ HTTP/1.1 / Host: localhost:12345 /OwnerId: {owner_id} / Content-Type: application/x-www-form-urlencoded
+
+##### EXAMPLE
 >curl localhost:8080/users/1/certificates/1 -X DELETE -H "OwnerId:1"
 <br/>
 
-
 #### CREATE CERTIFICATE TRANSFER
-
 <br/>
 
->curl localhost:8080/users/{user_id}/certificates/{certificate_id}/transfers -X POST -d "@transfer.json" -H "OwnerId:{owner_id}"
+##### API REQUEST
 
-example:
-<br/>
+##### /users/{user_id}/certificates/{certificate_id}/transfers
 
->curl localhost:8080/users/2/certificates/1/transfers -X POST -d "@transfer.json" -H "OwnerId:1"
-<br/>
+##### REQUEST HEADER
+##### POST /users/{user_id}/certificates/{certificate_id}/transfers HTTP/1.1 / Host: localhost:12345 /OwnerId: {owner_id} / Content-Type: application/x-www-form-urlencoded
 
-_request body (example)_
+##### REQUEST BODY
 
 {
 
@@ -142,18 +143,22 @@ _request body (example)_
 
 }
 
+##### EXAMPLE
+>curl localhost:8080/users/2/certificates/1/transfers -X POST -d "@transfer.json" -H "OwnerId:1"
 <br/>
 
 #### ACCEPT CERTIFICATE TRANSFER
 <br/>
 
->curl localhost:8080/users/{user_id}/certificates/{certificate_id}/transfers -X PATCH-d "@transfer.json" -H "OwnerId:{owner_id}"
+##### API REQUEST
 
->curl localhost:8080/users/2/certificates/1/transfers -X PATCH-d "@transfer.json" -H "OwnerId:1"
+##### /users/{user_id}/certificates/{certificate_id}/transfers
 
-<br/>
+##### REQUEST HEADER
+##### POST /users/{user_id}/certificates/{certificate_id}/transfers HTTP/1.1 / Host: localhost:12345 /OwnerId: {owner_id} / Content-Type: application/x-www-form-urlencoded
 
-_request body (example)_
+
+##### REQUEST BODY
 {
     
     "transfer":{
@@ -161,7 +166,5 @@ _request body (example)_
     "status":"completed"}
 }
 
-
-
-
-
+##### EXAMPLE
+>curl localhost:8080/users/2/certificates/1/transfers -X PATCH-d "@transfer.json" -H "OwnerId:1"
