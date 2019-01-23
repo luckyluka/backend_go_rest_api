@@ -62,6 +62,7 @@ _CREATE CERTIFICATE_
 example:
 
 >curl localhost:8080/users/1/certificates/1 -X POST -d "@test.json" -H "OwnerId:1"
+<br/>
 
 request body (example)
 
@@ -86,7 +87,7 @@ _UPDATE CERTIFICATE_
 example:
 
 >curl localhost:8080/users/1/certificates/1 -X PATCH -d "@test.json" -H "OwnerId:1"
-
+<br/>
 
 request body (example)
 
@@ -106,14 +107,26 @@ request body (example)
 
 
 _DELETE CERTIFICATE_
+<br/>
 
 
 >curl localhost:8080/users/{user_id}/certificates/{certificate_id} -X DELETE -H "OwnerId:{owner_id}"
 
 >curl localhost:8080/users/1/certificates/1 -X DELETE -H "OwnerId:1"
+<br/>
 
 
 _CREATE CERTIFICATE TRANSFER_
+
+<br/>
+
+>curl localhost:8080/users/{user_id}/certificates/{certificate_id}/transfers -X POST -d "@transfer.json" -H "OwnerId:{owner_id}"
+
+example:
+
+>curl localhost:8080/users/2/certificates/1/transfers -X POST -d "@transfer.json" -H "OwnerId:1"
+<br/>
+
 
 request body (example)
 
@@ -125,22 +138,22 @@ request body (example)
 
 }
 
->curl localhost:8080/users/{user_id}/certificates/{certificate_id}/transfers -X POST -d "@transfer.json" -H "OwnerId:{owner_id}"
-
->curl localhost:8080/users/2/certificates/1/transfers -X POST -d "@transfer.json" -H "OwnerId:1"
-
+<br/>
 
 _ACCEPT CERTIFICATE TRANSFER_
+<br/>
+
+>curl localhost:8080/users/{user_id}/certificates/{certificate_id}/transfers -X PATCH-d "@transfer.json" -H "OwnerId:{owner_id}"
+
+>curl localhost:8080/users/2/certificates/1/transfers -X PATCH-d "@transfer.json" -H "OwnerId:1"
+
+<br/>
 
 request body (example)
 {
     "transfer":{
     "status":"completed"}
 }
-
->curl localhost:8080/users/{user_id}/certificates/{certificate_id}/transfers -X PATCH-d "@transfer.json" -H "OwnerId:{owner_id}"
-
->curl localhost:8080/users/2/certificates/1/transfers -X PATCH-d "@transfer.json" -H "OwnerId:1"
 
 
 
