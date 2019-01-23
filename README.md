@@ -41,7 +41,13 @@ example response
 
 _CREATE CERTIFICATE_
 
-request body (json format)
+>curl localhost:8080/users/{user_id}/certificates/{certificate_id} -X POST -d "@file.json" -H "OwnerId:{owner_id}"
+
+example:
+
+>curl localhost:8080/users/1/certificates/1 -X POST -d "@test.json" -H "OwnerId:1"
+
+request body (example)
 
 {
     
@@ -56,11 +62,7 @@ request body (json format)
 }
 
 
->curl localhost:8080/users/{user_id}/certificates/{certificate_id} -X POST -d "@file.json" -H "OwnerId:{owner_id}"
 
-example:
-
->curl localhost:8080/users/1/certificates/1 -X POST -d "@test.json" -H "OwnerId:1"
 
 
 _UPDATE CERTIFICATE_
@@ -114,7 +116,7 @@ request body (example)
 
 _ACCEPT CERTIFICATE TRANSFER_
 
-request body (json)
+request body (example)
 {
     "transfer":{
     "status":"completed"}
