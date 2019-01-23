@@ -38,7 +38,7 @@ You may also use provided json files, where there is a need for request body.
 
 <br/>
 
-###### GET CERTIFICATES
+#### GET CERTIFICATES
 
 <br/>
 
@@ -54,7 +54,7 @@ example response
 
 <br/>
 
-###### CREATE CERTIFICATE_
+#### CREATE CERTIFICATE
 
 <br/>
 
@@ -80,7 +80,7 @@ request body (example)
 }
 
 
-###### UPDATE CERTIFICATE
+#### UPDATE CERTIFICATE
 <br/>
 
 >curl localhost:8080/users/{user_id}/certificates/{certificate_id}/transfers -X PATCH -d "@file.json" -H "OwnerId:{owner_id}"
@@ -107,7 +107,7 @@ request body (example)
 
 
 
-###### DELETE CERTIFICATE
+#### DELETE CERTIFICATE
 <br/>
 
 
@@ -117,7 +117,7 @@ request body (example)
 <br/>
 
 
-###### CREATE CERTIFICATE TRANSFER
+#### CREATE CERTIFICATE TRANSFER
 
 <br/>
 
