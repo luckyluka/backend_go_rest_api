@@ -27,8 +27,10 @@
 
 >docker run -p 8080:8080 backend_go_rest_api backend_go_rest_api
 <br/>
-<br/>
+
+
 **API USAGE**
+
 <br/>
 
 To interface with the API you may use curl commands, as is done in the examples below.
@@ -38,8 +40,11 @@ You may also use provided json files, where there is a need for request body.
 
 _GET CERTIFICATES_
 <br/>
+
 >curl localhost:8080/users/{user_id}/certificates/ -X GET
+
 <br/>
+
 example response
 
 >{"id":"1","title":"SunScape","createdAt":"Florence","ownerId":"1","year":"1982","transfer":{}}
@@ -47,8 +52,11 @@ example response
 
 
 <br/>
+
 _CREATE CERTIFICATE_
+
 <br/>
+
 >curl localhost:8080/users/{user_id}/certificates/{certificate_id} -X POST -d "@file.json" -H "OwnerId:{owner_id}"
 
 example:
@@ -70,10 +78,15 @@ request body (example)
 }
 
 
-
-
-
 _UPDATE CERTIFICATE_
+<br/>
+
+>curl localhost:8080/users/{user_id}/certificates/{certificate_id}/transfers -X PATCH -d "@file.json" -H "OwnerId:{owner_id}"
+
+example:
+
+>curl localhost:8080/users/1/certificates/1 -X PATCH -d "@test.json" -H "OwnerId:1"
+
 
 request body (example)
 
@@ -90,11 +103,6 @@ request body (example)
 }
 
 
->curl localhost:8080/users/{user_id}/certificates/{certificate_id}/transfers -X PATCH -d "@file.json" -H "OwnerId:{owner_id}"
-
-example:
-
->curl localhost:8080/users/1/certificates/1 -X PATCH -d "@test.json" -H "OwnerId:1"
 
 
 _DELETE CERTIFICATE_
