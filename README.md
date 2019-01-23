@@ -124,10 +124,10 @@ _CREATE CERTIFICATE TRANSFER_
 >curl localhost:8080/users/{user_id}/certificates/{certificate_id}/transfers -X POST -d "@transfer.json" -H "OwnerId:{owner_id}"
 
 example:
+<br/>
 
 >curl localhost:8080/users/2/certificates/1/transfers -X POST -d "@transfer.json" -H "OwnerId:1"
 <br/>
-
 
 request body (example)
 
