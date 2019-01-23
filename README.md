@@ -228,7 +228,7 @@ You may also use provided json files, where there is a need for request body.
 }
 
 ##### EXAMPLE
->curl localhost:8080/users/2/certificates/1/transfers -X PATCH-d "@transfer_accept.json" -H "OwnerId:2"
+>curl localhost:8080/users/2/certificates/1/transfers -X PATCH -d "@transfer_accept.json" -H "OwnerId:2"
 
 
 <br/>
