@@ -34,7 +34,9 @@
 <br/>
 
 To interface with the API you may use curl commands, as is done in the examples below.
-You may also use provided json files, where there is a need for request body.
+Json files are provided to use, where there is a need for request body.
+
+"Database" holds two user accounts (user_id = 1, user_id = 2), each one owns two certificates (certificate_id = 1, certificate_id = 2).  
 
 <br/>
 
@@ -150,7 +152,7 @@ You may also use provided json files, where there is a need for request body.
 ###### POST /users/{user_id}/certificates/{certificate_id}/ HTTP/1.1 / Host: localhost:12345 /OwnerId: {owner_id} / Content-Type: application/x-www-form-urlencoded
 
 ##### EXAMPLE
->curl localhost:8080/users/1/certificates/1 -X DELETE -H "OwnerId:1"
+>curl localhost:8080/users/1/certificates/3 -X DELETE -H "OwnerId:1"
 <br/>
 
 ### CREATE CERTIFICATE TRANSFER
